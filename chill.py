@@ -6,10 +6,9 @@ import os
 from playsound import playsound 
 import pyttsx3 
 pyttsx3.init()
+range_of_numbers=list(range(1,11,1))
 colors=[Fore.GREEN,Fore.CYAN,Fore.BLUE,Fore.RED,Fore.RESET]
-current_mp3_files=['blaze.mp3','Fighter.mp3','survivor_instrumental.mp3','Survivor.mp3','TRACER.mp3','reboot.mp3']
-
-#Creating a function that loops over a subscriptable sequence and prints it horizontially 
+current_mp3_files=['blaze.mp3','Fighter.mp3','survivor_instrumental.mp3','Survivor.mp3','TRACER.mp3','reboot.mp3','setsuna.mp3','desert_wind.mp3']
 def loop_over(sequence,color,delay_time):
     for text in sequence:
         sys.stdout.flush()
@@ -41,16 +40,46 @@ else:
             how_many_times_mp3_file_must_be_played=int(input(f'How many times do you want to play {input_name_of_mp3_file}?:'))
             time.sleep(1)
             for n in range(how_many_times_mp3_file_must_be_played):
-                current_number=n 
-                further_number=n+1
-                if further_number==1:
-                 pyttsx3.speak(f'{input_name_of_mp3_file} playing for the first time')
-                 time.sleep(1)
-                 playsound(input_name_of_mp3_file)
-            else:
+                current_number=n
+                if current_number==0:
+                    pyttsx3.speak(f'{input_name_of_mp3_file} playing for the first time')
+                    time.sleep(1)
+                    playsound(input_name_of_mp3_file)
+                elif current_number==1:
+                    pyttsx3.speak(f'{input_name_of_mp3_file} playing for the second time')
+                    playsound(input_name_of_mp3_file)
+                elif current_number==2:
+                    pyttsx3.speak(f'{input_name_of_mp3_file} playing for the third time')
+                    playsound(input_name_of_mp3_file)
+                elif current_number==3:
+                    pyttsx3.speak(f'{input_name_of_mp3_file} playing for the fourth time')
+                    time.sleep(1)
+                    playsound(input_name_of_mp3_file)
+                elif current_number==4:
+                     pyttsx3.speak(f'{input_name_of_mp3_file} playing for the fifth time')
+                     time.sleep(1)
+                     playsound(input_name_of_mp3_file)
+                elif current_number==5:
+                     pyttsx3.speak(f'{input_name_of_mp3_file} playing for the sixth time')
+                     time.sleep(1)
+                     playsound(input_name_of_mp3_file)
+                elif current_number==6:
+                     pyttsx3.speak(f'{input_name_of_mp3_file} playing for the seventh time')
+                     playsound(input_name_of_mp3_file)
+                elif current_number==7:
+                    pyttsx3.speak(f'{input_name_of_mp3_file} playing for the eighth time')
+                    playsound(input_name_of_mp3_file)
+                elif current_number==8:
+                     pyttsx3.speak(f'{input_name_of_mp3_file} playing for the ningth time')
+                     playsound(input_name_of_mp3_file)
+                elif current_number==9:
+                      pyttsx3.speak(f'{input_name_of_mp3_file} playing for the tenth time')
+                      playsound(input_name_of_mp3_file)
                 if how_many_times_mp3_file_must_be_played!=1:
-                 pyttsx3.speak(f'{input_name_of_mp3_file} was played for the last time')
+                    time.sleep(1)
+                    pyttsx3.speak(f'{input_name_of_mp3_file} was played for the last time')
+                    sys.exit('')
                 else:
                     pass
         except ValueError:
-            pass
+            loop_over(sequence='Error,you entered an invalid value',color=colors[0],delay_time=0.1)
