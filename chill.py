@@ -6,9 +6,8 @@ import os
 from playsound import playsound 
 import pyttsx3 
 pyttsx3.init()
-range_of_numbers=list(range(1,11,1))
 colors=[Fore.GREEN,Fore.CYAN,Fore.BLUE,Fore.RED,Fore.RESET]
-current_mp3_files=['blaze.mp3','Fighter.mp3','survivor_instrumental.mp3','Survivor.mp3','TRACER.mp3','reboot.mp3','setsuna.mp3','desert_wind.mp3']
+current_mp3_files=['blaze.mp3','Fighter.mp3','survivor_instrumental.mp3','Survivor.mp3','TRACER.mp3','reboot.mp3','setsuna.mp3',]
 def loop_over(sequence,color,delay_time):
     for text in sequence:
         sys.stdout.flush()
@@ -75,11 +74,10 @@ else:
                 elif current_number==9:
                       pyttsx3.speak(f'{input_name_of_mp3_file} playing for the tenth time')
                       playsound(input_name_of_mp3_file)
+            else:
                 if how_many_times_mp3_file_must_be_played!=1:
-                    time.sleep(1)
-                    pyttsx3.speak(f'{input_name_of_mp3_file} was played for the last time')
-                    sys.exit('')
-                else:
-                    pass
+                 time.sleep(1)
+                 pyttsx3.speak(f'{input_name_of_mp3_file} was played for the last time')
+                 sys.exit('')
         except ValueError:
             loop_over(sequence='Error,you entered an invalid value',color=colors[0],delay_time=0.1)
